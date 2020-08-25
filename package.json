@@ -1,0 +1,30 @@
+{
+  "name": "lazyload-es5",
+  "version": "1.0.0",
+  "description": "A Vanilla JavaScript(es5) Plugin For Lazy Loading Images. 一个用es5写的原生JavaScript图片懒加载插件。",
+  "main": "lazyload.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1esse/lazyload.git"
+  },
+  "dependencies": {
+    "intersection-observer": "^0.11.0"
+  },
+  "keywords": [
+    "lazyload",
+    "懒加载"
+  ],
+  "files": [
+    "lazyload.js",
+    "lazyload.min.js"
+  ],
+  "author": "Jesse Zhao <2424457572@qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/1esse/lazyload/issues"
+  },
+  "homepage": "https://github.com/1esse/lazyload#readme"
+}
