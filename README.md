@@ -44,7 +44,7 @@ export default {
 
 插件使用了[Intersection Observer API](https://developer.mozilla.org/zh-CN/docs/Web/API/IntersectionObserver)用作监听图片是否进入浏览器视图窗口，如需配置Intersection Observer API属性，请阅读该[API的属性](https://developer.mozilla.org/zh-CN/docs/Web/API/IntersectionObserver#%E5%B1%9E%E6%80%A7)文档并在实例化的时候以对象的方式传入参数。
 
-由于各个浏览器对Intersection Observer API的支持情况不同，如需兼容多浏览器（如ie），需要下载polyfill实现的Intersection Observer API模块，并在此插件执行之前把它引入。原生浏览器参考[上文](#浏览器原生)，vue直接下载就行，但要确保他们都在node_modules（同一层目录）下。
+由于各个浏览器对Intersection Observer API的支持情况不同，如需兼容多浏览器（如ie），需要下载polyfill实现的Intersection Observer API模块（`npm i intersection-observer` 或者 `yarn add intersection-observer`），并在此插件执行之前把它引入。原生浏览器参考[上文](#浏览器原生)，vue直接下载就行，但要确保该模块与此插件都在node_modules（同一层目录）下，插件会自动将它引入。如果此插件是通过npm或者yarn下载而不是git clone的，则不需要另行下载intersection-observer，因为下载此插件的时候会自动下载其依赖。
 
 ### API
 #### loadMore()
