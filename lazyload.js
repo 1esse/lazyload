@@ -1,10 +1,4 @@
-/*
- * @Author: jesse zhao 
- * @Date: 2020-08-24 13:19:58 
- * @Last Modified by: jesse zhao
- * @Last Modified time: 2020-08-25 15:33:25
- * @github: https://github.com/1esse/lazyload
- */
+
 (function (root) {
     "use strict";
     if (typeof exports === 'object' && typeof IntersectionObserver !== 'function') {
@@ -15,7 +9,7 @@
         }
     }
     var LazyLoad = function (options) {
-        if (typeof IntersectionObserver !== 'function') this._compatibilityError()
+        if (typeof IntersectionObserver !== 'function') return this._compatibilityError()
         if (options && Object.prototype.toString.call(options) !== '[object Object]') console.error("Argument type must be object.")
         if (!options) options = {}
         this.options = {}
@@ -28,11 +22,11 @@
         this.observer = new IntersectionObserver(function (entries) {
             for (var i = 0; i < entries.length; i++) {
                 var entry = entries[i]
-                if (entry.isIntersecting === undefined && entry.intersectionRatio === undefined) this._compatibilityError()
+                if (entry.isIntersecting === undefined && entry.intersectionRatio === undefined) return this._compatibilityError()
                 if (entry.isIntersecting === undefined ? entry.intersectionRatio > 0 : entry.isIntersecting) {
                     var node = entry.target
                     this.observer.unobserve(node)
-                    if (node.tagName.toLowerCase() !== 'img') continue
+                    if ('img' !== node.tagName.toLowerCase()) continue
                     this._loadPic(node)
                 }
             }
@@ -76,7 +70,8 @@
             LazyLoad: LazyLoad,
             lazyload: lazyload
         }
-    } else {
+    }
+    else {
         root.LazyLoad = LazyLoad
         root.lazyload = lazyload
     }
