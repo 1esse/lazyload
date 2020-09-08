@@ -1,6 +1,6 @@
 {
   "name": "lazyload-es5",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Vanilla JavaScript(es5) Plugin For Lazy Loading Images. 一个用es5写的原生JavaScript图片懒加载插件。",
   "main": "lazyload.js",
   "scripts": {

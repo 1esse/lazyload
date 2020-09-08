@@ -34,6 +34,7 @@
         this.loadMore()
     }
     LazyLoad.prototype.loadMore = function () {
+        if (typeof IntersectionObserver !== 'function') return this._compatibilityError()
         var pic_nodes = this._capturePics()
         for (var i = 0; i < pic_nodes.length; i++) {
             this.observer.observe(pic_nodes[i])
